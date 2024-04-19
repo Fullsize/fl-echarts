@@ -1,21 +1,39 @@
 {
   "name": "@fullsize/echarts",
   "version": "1.0.0",
+  "types": "./dist/type/index.d.ts",
   "description": "常用echarts图整理",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c rollup.config.mjs"
+  "main": "./lib/index.umd.js",
+  "module": "./lib/index.js",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./lib/index.umd.js"
+    }
   },
-  "author": "",
-  "license": "ISC",
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "echarts"
+  ],
+  "author": "@fullsize",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "rollup -c rollup.config.mjs",
+    "npm:publish": "npm run build  && npm publish ."
+  },
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
-    "@types/lodash": "^4.17.0",
+    "@types/lodash-es": "^4.17.12",
     "echarts": "^5.5.0",
-    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
     "rollup": "^4.14.3",
     "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "lodash-es": "*"
   }
 }

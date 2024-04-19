@@ -1,9 +1,12 @@
 // rollup.config.mjs
 import typescript from '@rollup/plugin-typescript';
 import terser from '@rollup/plugin-terser';
+import resolve from '@rollup/plugin-node-resolve';
 const outputOption = {
   sourcemap: false, // 生成 source map
-
+  globals: {
+    _: 'lodash-es'
+  }
 }
 export default {
   input: './src/index.ts', // 入口文件路径
@@ -23,7 +26,8 @@ export default {
   ],
   plugins: [
     typescript(), // 使用 Rollup 插件处理 TypeScript
-    terser()
+    terser(),
+    resolve()
   ],
   external: ['echarts'], // 将 react 设置为外部依赖，不会打包到最终文件中
 };

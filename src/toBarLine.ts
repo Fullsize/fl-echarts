@@ -1,5 +1,5 @@
 import { EChartsOption } from 'echarts';
-import _ from 'lodash'
+import _ from 'lodash-es'
 export default function toBarLine(data: {
   name: string;
   value: number;
