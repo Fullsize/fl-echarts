@@ -22,7 +22,13 @@ export default {
       file: './lib/index.umd.js', // 输出文件路径
       format: 'umd', // 输出模块格式为 CommonJS
       ...outputOption
-    }
+    },
+    {
+      name: '@fullsize/echarts',
+      file: './lib/index.es.ts', // 输出文件路径
+      format: 'es', // 输出模块格式为 CommonJS
+      ...outputOption
+    },
   ],
   plugins: [
     typescript(), // 使用 Rollup 插件处理 TypeScript

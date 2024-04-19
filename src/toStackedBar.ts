@@ -1,13 +1,14 @@
 import { EChartsOption } from 'echarts';
-import _ from 'lodash-es'
-export default function toBarLine(data: {
+import _ from 'lodash-es';
+export interface DATA {
   name: string;
   value: number;
   unit: string;
   type: string;
   xAxisName: string;
-
-}[]): EChartsOption {
+  stackedName: string;
+}
+export default function toBarLine(data: DATA[]): EChartsOption {
   let options: EChartsOption = {
 
   }
@@ -61,12 +62,9 @@ export default function toBarLine(data: {
 
   const series = names.map((item) => {
     const currentType = _.find(types, ['type', item.type]);
-
-
     const json: any = {
       name: item['name'],
       type: item.type,
-
       yAxisIndex: currentType?.yIndex,
       data:
         _.filter(data, ['name', item.name]).map((a) => ({
@@ -75,6 +73,9 @@ export default function toBarLine(data: {
           unit: a['unit'],
         })),
     };
+    if (item.type === 'bar' && item.stackedName) {
+      json.stack = item.stackedName
+    }
     return json;
   });
 

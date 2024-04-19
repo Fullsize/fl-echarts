@@ -1,6 +1,6 @@
 {
   "name": "@fullsize/echarts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "types": "./lib/type/index.d.ts",
   "description": "常用echarts图整理",
   "main": "./lib/index.umd.js",
