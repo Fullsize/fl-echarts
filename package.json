@@ -1,0 +1,21 @@
+{
+  "name": "@fullsize/echarts",
+  "version": "1.0.0",
+  "description": "常用echarts图整理",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c rollup.config.mjs"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/lodash": "^4.17.0",
+    "echarts": "^5.5.0",
+    "lodash": "^4.17.21",
+    "rollup": "^4.14.3",
+    "typescript": "^5.4.5"
+  }
+}
