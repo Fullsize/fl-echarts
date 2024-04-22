@@ -35,5 +35,5 @@ export default {
     terser(),
     resolve()
   ],
-  external: ['echarts'], // 将 react 设置为外部依赖，不会打包到最终文件中
+  external: ['echarts', 'lodash-es'], // 将 react 设置为外部依赖，不会打包到最终文件中
 };
