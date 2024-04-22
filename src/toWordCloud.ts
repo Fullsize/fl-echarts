@@ -6,36 +6,33 @@ export interface DATA {
   unit: string;
 }
 export default function toWordCloud(data: DATA[]) {
-  let options: EChartsOption = {
-
-  }
+  let options: EChartsOption = {};
   if (isEmpty(data)) {
-    return options
+    return options;
   }
   const series: any[] = [
     {
-      type: "wordCloud",
+      type: 'wordCloud',
 
       textStyle: {
         fontWeight: 600,
-
       },
       emphasis: {
-        focus: "none",
+        focus: 'none',
       },
       data,
     },
-  ]
+  ];
   options = {
     tooltip: {
       show: true,
       formatter: function (params: any) {
         return (
           params.name +
-          "<br/>" +
+          '<br/>' +
           params.marker +
-          params.data.originValue +
-          (params.data.unit || "")
+          params.data.value +
+          (params.data.unit || '')
         );
       },
     },
@@ -47,6 +44,6 @@ export default function toWordCloud(data: DATA[]) {
     },
 
     series,
-  }
-  return options
+  };
+  return options;
 }
