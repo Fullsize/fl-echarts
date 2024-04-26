@@ -5,7 +5,7 @@ bin-release/
 
 .settings/
 .vscode/
-
+.npmrc
 *.swf
 *.air
 *.ipa
