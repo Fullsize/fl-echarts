@@ -8,7 +8,8 @@
   "exports": {
     ".": {
       "import": "./lib/index.js",
-      "require": "./lib/index.umd.js"
+      "require": "./lib/index.umd.js",
+      "types": "./lib/type/index.d.ts"
     }
   },
   "files": [
